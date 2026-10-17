@@ -1,6 +1,6 @@
 # [The Cyber Range](http://joshmadakor.tech/cyber-range) Project
 
-# Cyber Defense: MySQL Extortion & Incident Response
+# Cyber Defense Final — Advanced Honey Pot w/Live Breach
 
 In this project, I investigated suspicious activity against a Windows VM hosting MySQL in The Cyber Range. I correlated database audit logs, Microsoft Defender for Endpoint telemetry, and network flow data to reconstruct the incident and guide response actions.
 
