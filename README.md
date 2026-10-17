@@ -224,7 +224,7 @@ I consolidated the investigation into an incident report covering:
 
 The report distinguishes observed activity, analyst assessments, and outcomes that could not be verified.
 
-https://docs.google.com/document/d/1jmHK_rTeGdQTFzmNylHFGP8WDvX-UHmsDCNDeyGMo0M/edit?usp=sharing
+[Final Incident Report](https://docs.google.com/document/d/1jmHK_rTeGdQTFzmNylHFGP8WDvX-UHmsDCNDeyGMo0M/edit?usp=sharing)
 
 ---
 
