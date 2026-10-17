@@ -57,8 +57,6 @@ The evidence sources included:
 
 I used KQL to filter the evidence by device, time, source address, and activity type. Written timeline entries use UTC; the original screenshots display Pacific time.
 
-<!-- Add screenshot: KQL evidence coverage across the Defender tables. -->
-
 ---
 
 ## Step 2: MySQL Authentication Investigation
@@ -69,7 +67,7 @@ The database authentication records, combined with accepted TCP/3306 connections
 
 **Finding:** Remote privileged database access was established. How the credentials were obtained was not determined from available logs.
 
-<!-- Add screenshot: MySQL root connection records and source IP. -->
+<img width="929" height="444" alt="image" src="https://github.com/user-attachments/assets/e990f286-7b2d-46c8-a8f4-dca173a8a53c" />
 
 ---
 
@@ -89,9 +87,11 @@ The ransom message was also visible in MySQL Workbench.
 
 **Finding:** The evidence established an extortion attempt and potentially destructive database activity. Query logs record received statements, so they did not independently prove that every command succeeded. The ransom message’s claims of data theft and deletion also required corroboration.
 
-<!-- Add screenshot: Database-read and DROP DATABASE statements. -->
+<img width="925" height="445" alt="image" src="https://github.com/user-attachments/assets/76d6c3ce-9fa5-40f9-83f6-0290237c2e9f" />
 
-<!-- Add screenshot: Ransom message displayed in MySQL Workbench. -->
+<img width="906" height="349" alt="image" src="https://github.com/user-attachments/assets/6958a7aa-9f67-466c-912e-6db8ec1c73b6" />
+
+<img width="1232" height="481" alt="image" src="https://github.com/user-attachments/assets/ed21ee28-9bf9-4677-91e5-b130f59a009e" />
 
 ---
 
@@ -103,7 +103,7 @@ The investigation also examined process, file, and registry activity for signs o
 
 **Finding:** Suspicious Windows network authentication was observed. Attacker-controlled Windows execution, a completed public RDP session, and a direct connection between the Windows and MySQL activity were not determined from available logs.
 
-<!-- Add screenshot: Public-source Windows administrator logon events. -->
+<img width="914" height="469" alt="image" src="https://github.com/user-attachments/assets/e89272db-6059-4b99-b3c9-9d831ae64786" />
 
 ---
 
@@ -115,7 +115,7 @@ During the principal collection window, flow records showed **4,909,352 bytes, a
 
 **Finding:** The timing and outbound volume supported likely data transfer. Network flows did not establish the exact contents transferred.
 
-<!-- Add screenshot: Network flow records showing the source, destination, byte counts, and access rule. -->
+<img width="1078" height="394" alt="image" src="https://github.com/user-attachments/assets/7c4633a7-a67b-43ce-a2f8-f895ef758ed6" />
 
 ---
 
@@ -134,8 +134,6 @@ I combined database, endpoint, and network evidence to reconstruct the sequence 
 | September 30 and October 1 | Additional ransom-database creation requests observed |
 
 The ransom-message writes preceded the principal bulk-read sequence. Attribution of all observed activity to a single operator remained unresolved.
-
-<!-- Add screenshot: Chronological query results supporting the timeline. -->
 
 ---
 
@@ -157,11 +155,23 @@ These actions addressed exposed services and unnecessary privileged access.
 
 **Validation gap:** The available evidence did not establish the malware scan findings, final effective network rules, or the exact retained configuration of the remote MySQL root account.
 
-<!-- Add screenshot: MDE device isolation. -->
+<img width="1062" height="482" alt="image" src="https://github.com/user-attachments/assets/10e93078-3a50-4a72-8409-ddec778e3322" />
 
-<!-- Add screenshot: Hardened NSG or Windows Firewall configuration. -->
 
-<!-- Add screenshot: Account hardening or malware scan evidence. -->
+<img width="931" height="445" alt="image" src="https://github.com/user-attachments/assets/13a6fa8f-2449-4ccc-8d3c-07266305a36d" />
+
+
+<img width="688" height="421" alt="image" src="https://github.com/user-attachments/assets/96a270c6-9405-4e7c-87ab-42abb824be45" />
+
+
+<img width="737" height="403" alt="image" src="https://github.com/user-attachments/assets/5d1cfa7a-66be-4c35-a84b-af69b4e5eb18" />
+
+
+<img width="926" height="449" alt="image" src="https://github.com/user-attachments/assets/01a10d47-52fb-43f5-9c43-cad308214d2b" />
+
+
+<img width="928" height="497" alt="image" src="https://github.com/user-attachments/assets/2a9df8b3-09bf-4fbe-afee-73df978fad0d" />
+
 
 ---
 
@@ -175,7 +185,6 @@ This step provided practice troubleshooting connectivity during incident recover
 
 **Recovery status:** Management access was restored. Successful database restoration and full incident recovery were not determined from available logs.
 
-<!-- Add screenshot: Restored VM access or relevant recovery evidence. -->
 
 ---
 
@@ -196,7 +205,6 @@ The earlier package was the earliest available collection, rather than a proven 
 
 **Finding:** The comparison helped separate endpoint changes from evidence of malicious activity. It did not independently establish data theft, while the separate MySQL and network evidence supported likely transfer.
 
-<!-- Add screenshot: Investigation package comparison table or supporting artifacts. -->
 
 ---
 
@@ -216,7 +224,7 @@ I consolidated the investigation into an incident report covering:
 
 The report distinguishes observed activity, analyst assessments, and outcomes that could not be verified.
 
-<!-- Add the link to your final incident report here. -->
+https://docs.google.com/document/d/1jmHK_rTeGdQTFzmNylHFGP8WDvX-UHmsDCNDeyGMo0M/edit?usp=sharing
 
 ---
 
